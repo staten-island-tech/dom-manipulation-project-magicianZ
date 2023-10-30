@@ -24,5 +24,6 @@
     background-color: blue;
     margin:auto;
     padding: auto;
+    overflow: hidden;
 
 }
