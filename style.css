@@ -1,0 +1,18 @@
+#blackbox{
+    width: 1660px;
+    height:1660px;
+    background-color: black;
+    margin:auto;
+    padding: auto;
+
+}
+
+#btn{
+    margin:auto;
+    
+}
+
+#text{
+    font-size: 40px;
+    color: blue;
+}
