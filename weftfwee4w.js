@@ -2,6 +2,7 @@
 
 
 const DOMSelectors = {
+    form: document.getElementById("forum"),
     button:document.getElementById("btn"),
     blackbox:document.getElementById("blackbox"),
     text: document.querySelector("#text"),
@@ -13,9 +14,45 @@ const DOMSelectors = {
 }
 
 
-function backgroundtext(background,text){
-    background.style.height = "500px";
-    text.textContent = "red boxeeeeeee";
+
+
+function create(){
+    const ability  = {
+        name1 : DOMSelectors.attunementinput.value,
+        picture: DOMSelectors.mantrainput.value,
+        rarity: DOMSelectors.starinput.value,
+    }
+    injectHTML(ability)
+    
+
+
+    
+}
+
+DOMSelectors.form.addEventListener("submit",function(event){
+    event.preventDefault()
+    create()
+
+
+})
+
+
+
+function injectHTML(){
+   
+    DOMSelectors.blackbox.insertAdjacentHTML("afterbegin",
+    `
+    <div id="bocks"
+        <p> ${ability.name1}</p>
+        <p>${ability.rarity}</p>
+        <img src="${ability.picture}" alt="mantrea" width="200" height="200">
+        
+    <div>
+    
+    
+    `)
+  
+
 }
 
 
@@ -24,39 +61,3 @@ function backgroundtext(background,text){
 
 
 
-
-
-
-
-
-
-DOMSelectors.button.addEventListener("click",function(){
-    let input = DOMSelectors.attunementinput.value;
-    let input1 = DOMSelectors.mantrainput.value;
-    let input2 = DOMSelectors.starinput.value;
-
-
-
-    DOMSelectors.blackbox.insertAdjacentHTML("beforeend",
-    `
-    <div id="bocks"
-        <p> ${input}</p>
-        <p>${input1}</p>
-        <img src="${input2}" alt="mantrea" width="200" height="200">
-        <button type="button" id="removebtn">remove i think</button>
-    
-    
-    `
-    
-    
-    
-    )})
-
-function remove(){
-    let remove = document.querySelector("#removebutton")
-    remove.forEach((btn)=>
-    btn.addEventListener("click",function(event){
-        console.log(event.target.parentElement)
-    }))
-    }
-remove()
